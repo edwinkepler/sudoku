@@ -10,7 +10,11 @@
 
 class Sudoku {
     public:
-    static std::vector<short> create_std();
+    /**
+     * @brief Creates standard sudoku 9x9 board.
+     * @return 2d vector of a valid standard sudoku board.
+     */
+    static std::vector<std::vector<short>> create_std();
 };
 
 #endif // SUDOKU_HPP

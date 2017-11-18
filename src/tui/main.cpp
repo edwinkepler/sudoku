@@ -9,9 +9,13 @@
 
 int main() {
     auto v_puzzle = Sudoku::create_std();
-    for(const auto& i : v_puzzle) {
-        std::cout << i;
+    for(int i = 0; i < 9; i++) {
+        for(const auto& j : v_puzzle[i]) {
+            std::cout << j;
+        }
+        std::cout << std::endl;
     }
+
     std::cout << std::endl;
     return 0;
 }
