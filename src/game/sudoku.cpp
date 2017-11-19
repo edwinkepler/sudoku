@@ -4,9 +4,12 @@
  */
 
 #include <random>
+#include <chrono>
 #include "sudoku.hpp"
 
 std::vector<std::vector<short>> Sudoku::create_std() {
+    // start timer
+    auto start_time = std::chrono::high_resolution_clock::now();
     // init randomize engine
     std::random_device rd;
     std::mt19937 eng(rd());
@@ -66,5 +69,12 @@ std::vector<std::vector<short>> Sudoku::create_std() {
             b_valid_sudoku = true;
         }
     }
+    // stop timer
+    auto current_time = std::chrono::high_resolution_clock::now();
+    f_time = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time).count();
     return v_sudoku;
+}
+
+float Sudoku::time() {
+    return f_time;
 }

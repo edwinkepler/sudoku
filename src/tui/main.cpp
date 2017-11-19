@@ -4,7 +4,6 @@
  */
 
 #include <iostream>
-
 #include "game/sudoku.hpp"
 
 void print_sudoku_std(std::vector<std::vector<short>> _puzzle) {
@@ -34,7 +33,9 @@ void print_sudoku_std(std::vector<std::vector<short>> _puzzle) {
 }
 
 int main() {
+    std::cout << "Generating sudoku puzzle...\n";
     auto v_puzzle = Sudoku::create_std();
+    std::cout << "Generated in " << Sudoku::time() << " milliseconds.\n\n";
     print_sudoku_std(v_puzzle);
     return 0;
 }

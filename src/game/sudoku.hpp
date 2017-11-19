@@ -8,6 +8,9 @@
 
 #include <vector>
 
+/** @brief Time of the last operation. */
+static float f_time = 0;
+
 /** @brief Sudoku generating and solving algorithms. */
 class Sudoku {
     public:
@@ -16,6 +19,11 @@ class Sudoku {
      * @return 2d vector of a valid standard sudoku board.
      */
     static std::vector<std::vector<short>> create_std();
+    /**
+     * @brief Get time of the last operation.
+     * @return Time of the last operation.
+     */
+    static float time();
 };
 
 #endif // SUDOKU_HPP
