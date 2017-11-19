@@ -12,12 +12,12 @@ std::vector<std::vector<short>> Sudoku::create_std() {
     std::uniform_int_distribution<> nine(1, 9);
 
     std::vector<std::vector<short>> v_sudoku;
-    bool f_valid_sudoku = false;
-    while(!f_valid_sudoku) {
+    bool b_valid_sudoku = false;
+    while(!b_valid_sudoku) {
         // create std sudoku line
         std::vector<short> v_line;
-        bool f_valid_line = false;
-        while(!f_valid_line) {
+        bool b_valid_line = false;
+        while(!b_valid_line) {
             // randomize number
             short tmp = nine(eng);
             // put it on back of a vector
@@ -34,7 +34,7 @@ std::vector<std::vector<short>> Sudoku::create_std() {
                 // if there is 9 valid elements break the while loop
                 if(v_line.size() == 9) {
                     v_sudoku.push_back(v_line);
-                    f_valid_line = true;
+                    b_valid_line = true;
                 }
             }
         }
@@ -50,7 +50,7 @@ std::vector<std::vector<short>> Sudoku::create_std() {
         }
         // if there is 9 valid lines then break the loop
         if(v_sudoku.size() == 9) {
-            f_valid_sudoku = true;
+            b_valid_sudoku = true;
         }
     }
     return v_sudoku;
