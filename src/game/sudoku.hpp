@@ -8,6 +8,7 @@
 
 #include <vector>
 
+/** @brief Sudoku generating and solving algorithms. */
 class Sudoku {
     public:
     /**
